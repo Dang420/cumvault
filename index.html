@@ -1,573 +1,262 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* Reset / base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0f172a;
+  color: #e5e7eb;
+}
+
+/* App layout */
+#app {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+header p {
+  opacity: 0.7;
+  margin-top: 0.25rem;
+}
+
+/* Controls */
+#controls {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+#controls button {
+  flex: 1;
+  padding: 0.9rem;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: none;
+  background: #38bdf8;
+  color: #020617;
+  font-weight: 600;
+}
+
+/* Editor */
+#editor h2 {
+  margin: 1rem 0 0.25rem;
+  font-size: 1.1rem;
+}
+
+textarea {
+  width: 100%;
+  min-height: 140px;
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  resize: vertical;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+/* Preview */
+#preview {
+  margin-top: 2rem;
+}
+
+#preview h2 {
+  margin-bottom: 0.5rem;
+}
+
+#previewFrame {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  border: none;
+  background: white;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  opacity: 0.5;
+  font-size: 0.85rem;
+}
+
+</style>
+
+</head>
+
+<body>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CumVault • Free Hardcore Tube 2025</title>
-  <meta name="description" content="Unlimited free porn videos — Pornhub embeds, no signup, no limits"/>
-
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
-    body {
-      background:#000;
-      color:#e0e0e0;
-      font-family:'Poppins',sans-serif;
-      line-height:1.5;
-    }
-
-    h1,h2,h3 { font-family:'Orbitron',sans-serif; }
-    .container { max-width:1800px; margin:0 auto; padding:0 1rem; }
-
-    /* Age Gate */
-    .age-gate {
-      position:fixed; inset:0; z-index:9999;
-      background:rgba(0,0,0,0.98);
-      display:flex; flex-direction:column; align-items:center; justify-content:center;
-      text-align:center; padding:1.5rem;
-    }
-    .age-gate h1 { font-size:clamp(2.8rem,10vw,5.5rem); color:#ff3366; text-shadow:0 0 35px #ff3366; }
-    .age-gate button {
-      margin-top:2rem; padding:clamp(1rem,4vw,1.6rem) clamp(2.5rem,8vw,4.5rem);
-      font-size:clamp(1.3rem,5vw,2rem);
-      background:linear-gradient(45deg,#ff3366,#ff0066);
-      border:none; color:white; border-radius:50px; cursor:pointer;
-      box-shadow:0 0 30px rgba(255,51,102,0.7);
-      transition:transform 0.3s;
-    }
-    .age-gate button:hover { transform:scale(1.08); }
-
-    /* Header */
-    header {
-      background:rgba(10,10,10,0.95);
-      position:sticky; top:0; z-index:100;
-      backdrop-filter:blur(12px);
-      border-bottom:2px solid #ff3366;
-      padding:clamp(1rem,3vw,1.5rem);
-      text-align:center;
-    }
-    header h1 { font-size:clamp(2.2rem,8vw,3.8rem); color:#ff3366; text-shadow:0 0 20px #ff3366; }
-    nav { margin-top:0.8rem; font-size:clamp(0.95rem,2.8vw,1.15rem); }
-    nav a, nav select { color:#ff6699; margin:0 0.7rem; text-decoration:none; }
-    nav select {
-      padding:0.6rem 1.2rem;
-      background:#111; border:2px solid #ff3366;
-      border-radius:10px; color:white; cursor:pointer;
-    }
-
-    /* Upgraded Hero with Buttons */
-    .hero {
-      background:linear-gradient(rgba(0,0,0,0.88),rgba(0,0,0,0.88)), url('https://source.unsplash.com/random/1920x1080/?erotic,neon,dark');
-      background-size:cover; background-position:center;
-      padding:clamp(10rem,25vw,16rem) 1rem;
-      text-align:center;
-    }
-    .hero h1 { font-size:clamp(3.5rem,12vw,6rem); color:#ff3366; text-shadow:0 0 40px #ff3366; margin-bottom:1rem; }
-    .hero p { font-size:clamp(1.2rem,4vw,1.8rem); max-width:800px; margin:0 auto 2rem; }
-    .hero-buttons { display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem; }
-    .hero-btn {
-      padding:clamp(1rem,3vw,1.5rem) clamp(2rem,6vw,3rem);
-      font-size:clamp(1.2rem,4vw,1.6rem);
-      background:#ff3366; color:white; border:none; border-radius:50px;
-      cursor:pointer; box-shadow:0 0 20px rgba(255,51,102,0.5);
-      transition:transform 0.3s;
-    }
-    .hero-btn:hover { transform:scale(1.05); }
-
-    /* Category Quick Links */
-    .category-links {
-      display:flex; flex-wrap:wrap; gap:1rem;
-      justify-content:center; padding:1.5rem 0;
-      background:#111; margin:1rem 0;
-    }
-    .cat-btn {
-      padding:0.8rem 1.5rem;
-      background:#222; color:#ff6699; border:none; border-radius:50px;
-      cursor:pointer; transition:all 0.3s;
-    }
-    .cat-btn:hover { background:#ff3366; color:white; }
-
-    /* Stats Bar */
-    .stats-bar {
-      display:flex; flex-wrap:wrap; justify-content:center; gap:2rem;
-      padding:1.5rem 0; background:#0f0f0f; margin:1rem 0;
-      text-align:center;
-    }
-    .stat-item { font-size:1.1rem; }
-    .stat-number { font-size:2rem; color:#ff3366; font-weight:bold; }
-
-    /* Featured Carousel */
-    .featured-carousel {
-      overflow:hidden; padding:2rem 0;
-      background:#000;
-    }
-    .carousel-track {
-      display:flex; transition:transform 0.5s ease;
-    }
-    .carousel-card {
-      flex:0 0 300px; margin:0 1rem;
-      background:#111; border-radius:12px; overflow:hidden;
-    }
-
-    /* Search */
-    .search-bar { max-width:1000px; margin:2.5rem auto; padding:0 1rem; }
-    #videoSearch {
-      width:100%; padding:1.2rem; font-size:1.2rem;
-      background:#111; border:3px solid #ff3366; color:white;
-      border-radius:50px; outline:none;
-    }
-
-    /* Video Grid */
-    .video-gallery {
-      display:grid;
-      grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
-      gap:clamp(1.2rem,4vw,2.5rem);
-      padding:2rem 1rem;
-    }
-
-    .video-card {
-      background:#0f0f0f;
-      border-radius:14px; overflow:hidden;
-      transition:all 0.4s ease;
-      cursor:pointer;
-    }
-    .video-card:hover {
-      transform:translateY(-14px);
-      box-shadow:0 25px 50px rgba(255,51,102,0.35);
-    }
-
-    .thumbnail { position:relative; padding-top:56.25%; background:#000; }
-    .thumbnail img {
-      position:absolute; inset:0; width:100%; height:100%;
-      object-fit:cover; transition:transform 0.5s;
-    }
-    .video-card:hover .thumbnail img { transform:scale(1.12); }
-
-    .play-icon {
-      position:absolute; inset:0; margin:auto;
-      font-size:clamp(4rem,14vw,6rem); color:rgba(255,255,255,0.8);
-      opacity:0; transition:opacity 0.4s;
-    }
-    .video-card:hover .play-icon { opacity:1; }
-
-    .duration {
-      position:absolute; bottom:10px; right:10px;
-      background:rgba(0,0,0,0.75); padding:5px 10px;
-      border-radius:8px; font-size:0.9rem; color:#fff;
-    }
-
-    .video-card h3 {
-      padding:1rem; margin:0;
-      background:linear-gradient(90deg,#ff3366,#cc0033);
-      font-size:1.3rem; text-align:center;
-    }
-    .categories-tags {
-      text-align:center; padding:0.6rem;
-      background:#1a1a1a; color:#ff6699; font-size:0.85rem;
-    }
-
-    /* Modal */
-    .modal {
-      display:none; position:fixed; inset:0; z-index:1000;
-      background:rgba(0,0,0,0.96); align-items:center; justify-content:center;
-      padding:1rem;
-    }
-    .modal-content {
-      background:#000; width:100%; max-width:1280px;
-      border-radius:16px; overflow:hidden; position:relative;
-      border:2px solid #ff3366; max-height:95vh;
-    }
-    .close {
-      position:absolute; top:12px; right:18px;
-      font-size:3.5rem; color:#ff3366; cursor:pointer; z-index:10;
-    }
-    #modalTitle {
-      padding:1.5rem; margin:0;
-      background:linear-gradient(90deg,#ff3366,#cc0033);
-      text-align:center; font-size:2.2rem;
-    }
-    .modal-video { position:relative; padding-bottom:56.25%; height:0; }
-    #modalPlayer { position:absolute; inset:0; width:100%; height:100%; border:none; }
-
-    /* Monetization placeholders */
-    .monetize-box {
-      background:#111; margin:2rem auto; padding:1.5rem;
-      max-width:900px; border-radius:12px; text-align:center;
-    }
-    .monetize-box a { color:#ff6699; font-weight:bold; text-decoration:none; }
-
-    @media (max-width:768px) {
-      .video-gallery { grid-template-columns:1fr; }
-      .hero { padding:10rem 1rem; }
-      .hero-buttons { flex-direction:column; }
-    }
-
-    /* Focus outline for accessibility */
-    :focus { outline:3px solid rgba(255,51,102,0.6); outline-offset:3px; }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SuperCodePen Builder</title>
 </head>
+
 <body>
 
-<!-- Age Gate -->
-<div class="age-gate" id="ageGate">
-  <h1>18+ ONLY</h1>
-  <p>This site contains explicit adult material.<br>You must be 18 or older to enter.</p>
-  <button onclick="document.getElementById('ageGate').style.display='none'" aria-label="Enter site - I am 18 or older">I am 18+ — Enter</button>
-</div>
+  <div id="app">
 
-<header class="container">
-  <h1>CumVault</h1>
-  <nav>
-    <a href="#">Home</a> |
-    <select id="categoryFilter">
-      <option value="">All Categories</option>
-      <option value="Hentai">Hentai</option>
-      <option value="MILF">MILF</option>
-      <option value="Lesbian">Lesbian</option>
-      <option value="Anal">Anal</option>
-      <option value="BBC">BBC</option>
-      <option value="Creampie">Creampie</option>
-      <option value="Trans">Trans</option>
-    </select> |
-    Favorites: <span id="favTotal" class="fav-count">0</span>
-  </nav>
-</header>
+    <!-- Header -->
+    <header>
+      <h1>SuperCodePen</h1>
+      <p>Paste code. Build site. Deploy anywhere.</p>
+    </header>
 
-<!-- Upgraded Hero with Buttons -->
-<section class="hero container">
-  <h1>Free Hardcore Porn Tube 2025</h1>
-  <p>Unlimited Pornhub embeds — no signup, no limits, pure filth</p>
-  <div class="hero-buttons">
-    <button class="hero-btn" onclick="scrollToRandom()">Start Watching</button>
-    <button class="hero-btn" onclick="document.getElementById('videoSearch').focus()">Search Now</button>
-    <button class="hero-btn" onclick="alert('Favorites coming soon!')">My Favorites</button>
-  </div>
-</section>
+    <!-- Controls -->
+    <section id="controls">
+      <button id="runBtn">Run Code</button>
+      <button id="copyBtn">Copy Deploy Code</button>
+      <button id="exportBtn">Export for Deploy</button>
+    </section>
 
-<!-- Category Quick Links -->
-<div class="category-links container">
-  <button class="cat-btn" onclick="document.getElementById('categoryFilter').value='Lesbian'; applyFilters()">Lesbian</button>
-  <button class="cat-btn" onclick="document.getElementById('categoryFilter').value='Hentai'; applyFilters()">Hentai</button>
-  <button class="cat-btn" onclick="document.getElementById('categoryFilter').value='MILF'; applyFilters()">MILF</button>
-  <button class="cat-btn" onclick="document.getElementById('categoryFilter').value='Trans'; applyFilters()">Trans</button>
-  <button class="cat-btn" onclick="document.getElementById('categoryFilter').value='Anal'; applyFilters()">Anal</button>
-  <button class="cat-btn" onclick="document.getElementById('categoryFilter').value='BBC'; applyFilters()">BBC</button>
-</div>
+    <!-- Editor -->
+    <section id="editor">
 
-<!-- Stats Bar -->
-<div class="stats-bar container">
-  <div class="stat-item">
-    <div class="stat-number">13</div>
-    <div>Videos</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-number">500K+</div>
-    <div>Daily Views</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-number">100%</div>
-    <div>Free</div>
-  </div>
-</div>
+      <h2>HTML</h2>
+      <textarea
+        id="htmlInput"
+        placeholder="Paste your HTML here..."
+      ></textarea>
 
-<!-- Featured Video Carousel -->
-<section class="featured-carousel container" id="featuredCarousel">
-  <div class="carousel-track" id="carouselTrack"></div>
-</section>
+      <h2>CSS</h2>
+      <textarea
+        id="cssInput"
+        placeholder="Paste your CSS here..."
+      ></textarea>
 
-<div class="search-bar container">
-  <input type="text" id="videoSearch" placeholder="Search videos (lesbian squirt, hentai tentacles, MILF creampie...)"/>
-</div>
+      <h2>JavaScript</h2>
+      <textarea
+        id="jsInput"
+        placeholder="Paste your JavaScript here..."
+      ></textarea>
 
-<div class="monetize-box">
-  <p><strong>TrafficJunky / ExoClick Banner</strong> — Replace with real code from your affiliate dashboard</p>
-</div>
+    </section>
 
-<section class="video-gallery container" id="videoGallery">
-  <!-- Your 13 video cards -->
-  <div class="video-card" data-title="Lesbian Scissoring Squirt Fest" data-category="Lesbian" data-embed="https://www.pornhub.com/embed/ph5f8b2c3d4e5f6">
-    <div class="thumbnail">
-      <img src="https://source.unsplash.com/random/600x400/?lesbian,scissoring" alt="Lesbian Scissoring Squirt Fest thumbnail" loading="lazy">
-      <div class="play-icon" aria-hidden="true">▶</div>
-      <span class="duration">22:45</span>
-    </div>
-    <h3>Lesbian Scissoring Squirt Fest</h3>
-    <div class="categories-tags">Lesbian</div>
-    <p>Wet scenes with intense chemistry.</p>
+    <!-- Preview -->
+    <section id="preview">
+      <h2>Live Preview</h2>
+      <iframe id="previewFrame"></iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>Built entirely inside one CodePen.</p>
+    </footer>
+
   </div>
 
-  <div class="video-card" data-title="Hentai Tentacle Nightmare" data-category="Hentai" data-embed="https://www.pornhub.com/embed/ph6a1b2c3d4e5f7">
-    <div class="thumbnail">
-      <img src="https://source.unsplash.com/random/600x400/?hentai,tentacles" alt="Hentai Tentacle Nightmare thumbnail" loading="lazy">
-      <div class="play-icon" aria-hidden="true">▶</div>
-      <span class="duration">15:08</span>
-    </div>
-    <h3>Hentai Tentacle Nightmare</h3>
-    <div class="categories-tags">Hentai</div>
-    <p>Animated fantasy with high production art.</p>
-  </div>
-
-  <div class="video-card" data-title="MILF Bedroom Creampie" data-category="MILF" data-embed="https://www.pornhub.com/embed/ph7b2c3d4e5f6g8">
-    <div class="thumbnail">
-      <img src="https://source.unsplash.com/random/600x400/?milf,bedroom" alt="MILF Bedroom Creampie thumbnail" loading="lazy">
-      <div class="play-icon" aria-hidden="true">▶</div>
-      <span class="duration">28:30</span>
-    </div>
-    <h3>MILF Bedroom Creampie</h3>
-    <div class="categories-tags">MILF</div>
-    <p>Warm, intimate scenes with mature performers.</p>
-  </div>
-
-  <div class="video-card" data-title="Anal Deep Session" data-category="Anal" data-embed="https://www.pornhub.com/embed/ph8c3d4e5f6g7h9">
-    <div class="thumbnail">
-      <img src="https://source.unsplash.com/random/600x400/?anal,studio" alt="Anal Deep Session thumbnail" loading="lazy">
-      <div class="play-icon" aria-hidden="true">▶</div>
-      <span class="duration">18:50</span>
-    </div>
-    <h3>Anal Deep Session</h3>
-    <div class="categories-tags">Anal</div>
-    <p>Focused performance with crisp angles.</p>
-  </div>
-
-  <div class="video-card" data-title="BBC Threesome Party" data-category="BBC" data-embed="https://www.pornhub.com/embed/ph9d4e5f6g7h8i0">
-    <div class="thumbnail">
-      <img src="https://source.unsplash.com/random/600x400/?threesome,party" alt="BBC Threesome Party thumbnail" loading="lazy">
-      <div class="play-icon" aria-hidden="true">▶</div>
-      <span class="duration">24:12</span>
-    </div>
-    <h3>BBC Threesome Party</h3>
-    <div class="categories-tags">BBC</div>
-    <p>Energetic group scene with lively pacing.</p>
-  </div>
-
-  <div class="video-card" data-title="Trans Awakening" data-category="Trans" data-embed="https://www.pornhub.com/embed/ph0e5f6g7h8i9j1">
-    <div class="thumbnail">
-      <img src="https://source.unsplash.com/random/600x400/?trans,model" alt="Trans Awakening thumbnail" loading="lazy">
-      <div class="play-icon" aria-hidden="true">▶</div>
-      <span class="duration">20:05</span>
-    </div>
-    <h3>Trans Awakening</h3>
-    <div class="categories-tags">Trans</div>
-    <p>Confident performances and high energy.</p>
-  </div>
-
-  <div class="video-card" data-title="Creampie Backyard Special" data-category="Creampie" data-embed="https://www.pornhub.com/embed/ph1f6g7h8i9j0k2">
-    <div class="thumbnail">
-      <img src="https://source.unsplash.com/random/600x400/?creampie,backyard" alt="Creampie Backyard Special thumbnail" loading="lazy">
-      <div class="play-icon" aria-hidden="true">▶</div>
-      <span class="duration">16:20</span>
-    </div>
-    <h3>Creampie Backyard Special</h3>
-    <div class="categories-tags">Creampie</div>
-    <p>Outdoor scene with natural lighting and vibe.</p>
-  </div>
-
-  <div class="video-card" data-title="Japanese Hentai Schoolgirl" data-category="Hentai" data-embed="https://www.pornhub.com/embed/ph2g7h8i9j0k1l3">
-    <div class="thumbnail">
-      <img src="https://source.unsplash.com/random/600x400/?japanese,hentai" alt="Japanese Hentai Schoolgirl thumbnail" loading="lazy">
-      <div class="play-icon" aria-hidden="true">▶</div>
-      <span class="duration">12:44</span>
-    </div>
-    <h3>Japanese Hentai Schoolgirl</h3>
-    <div class="categories-tags">Hentai</div>
-    <p>Stylized animation with a classic feel.</p>
-  </div>
-
-  <div class="video-card" data-title="Extreme BDSM Showcase" data-category="Anal" data-embed="https://www.pornhub.com/embed/ph3h8i9j0k1l2m4">
-    <div class="thumbnail">
-      <img src="https://source.unsplash.com/random/600x400/?bdsm,dominant" alt="Extreme BDSM Showcase thumbnail" loading="lazy">
-      <div class="play-icon" aria-hidden="true">▶</div>
-      <span class="duration">30:00</span>
-    </div>
-    <h3>Extreme BDSM Showcase</h3>
-    <div class="categories-tags">Anal</div>
-    <p>Intense cinematography and bold direction.</p>
-  </div>
-
-  <div class="video-card" data-title="Amateur POV Compilation" data-category="BBC" data-embed="https://www.pornhub.com/embed/ph4i9j0k1l2m3n5">
-    <div class="thumbnail">
-      <img src="https://source.unsplash.com/random/600x400/?amateur,pov" alt="Amateur POV Compilation thumbnail" loading="lazy">
-      <div class="play-icon" aria-hidden="true">▶</div>
-      <span class="duration">26:18</span>
-    </div>
-    <h3>Amateur POV Compilation</h3>
-    <div class="categories-tags">BBC</div>
-    <p>Handheld POV shots for an immersive feel.</p>
-  </div>
-
-  <div class="video-card" data-title="Lesbian Oral Celebration" data-category="Lesbian" data-embed="https://www.pornhub.com/embed/ph5j0k1l2m3n4o6">
-    <div class="thumbnail">
-      <img src="https://source.unsplash.com/random/600x400/?lesbian,oral" alt="Lesbian Oral Celebration thumbnail" loading="lazy">
-      <div class="play-icon" aria-hidden="true">▶</div>
-      <span class="duration">14:55</span>
-    </div>
-    <h3>Lesbian Oral Celebration</h3>
-    <div class="categories-tags">Lesbian</div>
-    <p>Short, focused scenes showcasing skill and chemistry.</p>
-  </div>
-
-  <div class="video-card" data-title="Vintage Anal Classic" data-category="Anal" data-embed="https://www.pornhub.com/embed/ph6k1l2m3n4o5p7">
-    <div class="thumbnail">
-      <img src="https://source.unsplash.com/random/600x400/?vintage,anal" alt="Vintage Anal Classic thumbnail" loading="lazy">
-      <div class="play-icon" aria-hidden="true">▶</div>
-      <span class="duration">31:05</span>
-    </div>
-    <h3>Vintage Anal Classic</h3>
-    <div class="categories-tags">Anal</div>
-    <p>Timeless scenes with a retro aesthetic.</p>
-  </div>
-
-  <div class="video-card" data-title="Big Tits Compilation" data-category="MILF" data-embed="https://www.pornhub.com/embed/ph7l2m3n4o5p6q8">
-    <div class="thumbnail">
-      <img src="https://source.unsplash.com/random/600x400/?bigtits,compilation" alt="Big Tits Compilation thumbnail" loading="lazy">
-      <div class="play-icon" aria-hidden="true">▶</div>
-      <span class="duration">21:40</span>
-    </div>
-    <h3>Big Tits Compilation</h3>
-    <div class="categories-tags">MILF</div>
-    <p>Compilation cuts of popular performances.</p>
-  </div>
-
-</section>
-
-<div class="monetize-box">
-  <p><strong>JuicyAds / Clickadu In-Content Ad</strong> — Replace with your zone code</p>
-</div>
-
-<div class="monetize-box cam-promo">
-  <strong>Live Cam Action</strong><br>
-  <a href="https://chaturbate.com/in/?tour=yourref&campaign=yourcampaign" target="_blank" rel="nofollow noopener noreferrer">→ Chaturbate Live Girls</a><br>
-  <a href="https://stripchat.com/?ref=yourref" target="_blank" rel="nofollow noopener noreferrer">→ Stripchat Private Shows</a>
-</div>
-
-<div id="videoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modal-content" id="modalContent" tabindex="-1">
-    <button class="close" id="modalClose" aria-label="Close video" onclick="closeModal()">×</button>
-    <h2 id="modalTitle"></h2>
-    <div class="modal-video">
-      <iframe id="modalPlayer" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div>
-    <button id="favBtn">❤��� Add to Favorites</button>
-  </div>
-</div>
-
-<footer>
-  © 2025 CumVault • 18+ only • All models 18+ • <a href="#" style="color:#ff6699">Terms</a> • <a href="#" style="color:#ff6699">Privacy</a>
-</footer>
-
-<script>
-let favorites = JSON.parse(localStorage.getItem('cumFavs2025') || '[]');
-const favTotalEl = document.getElementById('favTotal');
-let previouslyFocusedElement = null;
-
-function updateFavUI() {
-  favTotalEl.textContent = favorites.length;
-  localStorage.setItem('cumFavs2025', JSON.stringify(favorites));
-}
-updateFavUI();
-
-function openModal(title, embedSrc) {
-  const modal = document.getElementById('videoModal');
-  const player = document.getElementById('modalPlayer');
-  const btn = document.getElementById('favBtn');
-  const closeBtn = document.getElementById('modalClose');
-
-  document.getElementById('modalTitle').textContent = title;
-  player.src = embedSrc;
-  modal.style.display = 'flex';
-
-  // prevent background scrolling and trap focus
-  previouslyFocusedElement = document.activeElement;
-  document.body.style.overflow = 'hidden';
-  document.getElementById('modalContent').focus();
-
-  function refreshFavButton() {
-    const isFav = favorites.includes(title);
-    btn.textContent = isFav ? '❤️ Favorited' : '❤️ Add to Favorites';
-  }
-  refreshFavButton();
-
-  btn.onclick = () => {
-    const isFavNow = favorites.includes(title);
-    if (isFavNow) {
-      favorites = favorites.filter(t => t !== title);
-    } else {
-      if (!favorites.includes(title)) favorites.push(title);
-    }
-    updateFavUI();
-    refreshFavButton();
-  };
-
-  function escHandler(e) { if (e.key === 'Escape') closeModal(); }
-  document.addEventListener('keydown', escHandler);
-  modal._escHandler = escHandler;
-}
-
-function closeModal() {
-  const modal = document.getElementById('videoModal');
-  const player = document.getElementById('modalPlayer');
-  modal.style.display = 'none';
-  player.src = '';
-  document.body.style.overflow = '';
-  if (previouslyFocusedElement && previouslyFocusedElement.focus) previouslyFocusedElement.focus();
-
-  if (modal._escHandler) document.removeEventListener('keydown', modal._escHandler);
-}
-
-// click outside to close
-document.getElementById('videoModal').onclick = e => {
-  if (e.target === document.getElementById('videoModal')) closeModal();
-};
-
-function wireGallery() {
-  document.querySelectorAll('.video-card').forEach(card => {
-    card.addEventListener('click', () => {
-      const title = card.dataset.title;
-      const src = card.dataset.embed;
-      if (title && src) openModal(title, src);
-    });
-  });
-}
-wireGallery();
-
-let filterTimeout;
-function applyFilters() {
-  clearTimeout(filterTimeout);
-  filterTimeout = setTimeout(() => {
-    const term = document.getElementById('videoSearch').value.toLowerCase().trim();
-    const cat = document.getElementById('categoryFilter').value;
-
-    document.querySelectorAll('.video-card').forEach(card => {
-      const text = card.textContent.toLowerCase();
-      const category = card.dataset.category || '';
-      const matchText = text.includes(term);
-      const matchCat = !cat || category === cat;
-      card.style.display = matchText && matchCat ? '' : 'none';
-    });
-  }, 280);
-}
-
-document.getElementById('videoSearch').addEventListener('input', applyFilters);
-document.getElementById('categoryFilter').addEventListener('change', applyFilters);
-
-function scrollToRandom() {
-  const visible = [...document.querySelectorAll('.video-card')].filter(c => c.style.display !== 'none');
-  if (visible.length === 0) return;
-  const random = visible[Math.floor(Math.random() * visible.length)];
-  random.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-
-// Featured Carousel (clones first 6 cards)
-const carouselTrack = document.getElementById('carouselTrack');
-if (carouselTrack) {
-  const cards = document.querySelectorAll('.video-card');
-  for (let i = 0; i < Math.min(6, cards.length); i++) {
-    const clone = cards[i].cloneNode(true);
-    clone.classList.add('carousel-card');
-    carouselTrack.appendChild(clone);
-  }
-}
-</script>
 </body>
 </html>
+
+<script>
+
+// Get DOM elements
+const htmlInput = document.getElementById("htmlInput");
+const cssInput = document.getElementById("cssInput");
+const jsInput = document.getElementById("jsInput");
+
+const runBtn = document.getElementById("runBtn");
+const copyBtn = document.getElementById("copyBtn");
+const exportBtn = document.getElementById("exportBtn");
+const previewFrame = document.getElementById("previewFrame");
+
+// Build the full HTML document from inputs
+function buildDocument() {
+  const html = htmlInput.value || "";
+  const css = cssInput.value || "";
+  const js = jsInput.value || "";
+
+  return `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+${css}
+</style>
+</head>
+<body>
+${html}
+
+<script>
+${js}
+<\/script>
+</body>
+</html>
+`;
+}
+
+// Run code in iframe
+runBtn.addEventListener("click", () => {
+  const doc = buildDocument();
+  previewFrame.srcdoc = doc;
+});
+
+// Copy full deployable HTML to clipboard
+copyBtn.addEventListener("click", async () => {
+  const doc = buildDocument();
+  try {
+    await navigator.clipboard.writeText(doc);
+    copyBtn.textContent = "Copied!";
+    setTimeout(() => {
+      copyBtn.textContent = "Copy Deploy Code";
+    }, 1500);
+  } catch (err) {
+    alert("Copy failed. Try Export instead.");
+  }
+});
+
+// Export HTML file for deploy
+exportBtn.addEventListener("click", () => {
+  const doc = buildDocument();
+  const blob = new Blob([doc], { type: "text/html" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "index.html";
+  a.click();
+
+  URL.revokeObjectURL(url);
+});
+
+// Auto-run on page load
+previewFrame.srcdoc = buildDocument();
+
+</script>
+
+</body>
+
+</html>
+
