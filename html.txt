@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CumVault • Free Hardcore Tube 2025</title>
+  <meta name="description" content="Unlimited free porn videos — Pornhub embeds, no signup, no limits"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      background:#000;
+      color:#e0e0e0;
+      font-family:'Poppins',sans-serif;
+      line-height:1.5;
+    }
+
+    h1,h2,h3 { font-family:'Orbitron',sans-serif; }
+    .container { max-width:1800px; margin:0 auto; padding:0 1rem; }
+
+    /* Age Gate */
+    .age-gate {
+      position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,0.98);
+      display:flex; flex-direction:column; align-items:center; justify-content:center;
+      text-align:center; padding:1.5rem;
+    }
+    .age-gate h1 { font-size:clamp(2.8rem,10vw,5.5rem); color:#ff3366; text-shadow:0 0 35px #ff3366; }
+    .age-gate button {
+      margin-top:2rem; padding:clamp(1rem,4vw,1.6rem) clamp(2.5rem,8vw,4.5rem);
+      font-size:clamp(1.3rem,5vw,2rem);
+      background:linear-gradient(45deg,#ff3366,#ff0066);
+      border:none; color:white; border-radius:50px; cursor:pointer;
+      box-shadow:0 0 30px rgba(255,51,102,0.7);
+      transition:transform 0.3s;
+    }
+    .age-gate button:hover { transform:scale(1.08); }
+
+    /* Header */
+    header {
+      background:rgba(10,10,10,0.95);
+      position:sticky; top:0; z-index:100;
+      backdrop-filter:blur(12px);
+      border-bottom:2px solid #ff3366;
+      padding:clamp(1rem,3vw,1.5rem);
+      text-align:center;
+    }
+    header h1 { font-size:clamp(2.2rem,8vw,3.8rem); color:#ff3366; text-shadow:0 0 20px #ff3366; }
+    nav { margin-top:0.8rem; font-size:clamp(0.95rem,2.8vw,1.15rem); }
+    nav a, nav select { color:#ff6699; margin:0 0.7rem; text-decoration:none; }
+    nav select {
+      padding:0.6rem 1.2rem;
+      background:#111; border:2px solid #ff3366;
+      border-radius:10px; color:white; cursor:pointer;
+    }
+
+    /* Upgraded Hero with Buttons */
+    .hero {
+      background:linear-gradient(rgba(0,0,0,0.88),rgba(0,0,0,0.88)), url('https://source.unsplash.com/random/1920x1080/?erotic,neon,dark');
+      background-size:cover; background-position:center;
+      padding:clamp(10rem,25vw,16rem) 1rem;
+      text-align:center;
+    }
+    .hero h1 { font-size:clamp(3.5rem,12vw,6rem); color:#ff3366; text-shadow:0 0 40px #ff3366; margin-bottom:1rem; }
+    .hero p { font-size:clamp(1.2rem,4vw,1.8rem); max-width:800px; margin:0 auto 2rem; }
+    .hero-buttons { display:flex; flex-wrap:wrap; justify-content:center; gap:1.5rem; }
+    .hero-btn {
+      padding:clamp(1rem,3vw,1.5rem) clamp(2rem,6vw,3rem);
+      font-size:clamp(1.2rem,4vw,1.6rem);
+      background:#ff3366; color:white; border:none; border-radius:50px;
+      cursor:pointer; box-shadow:0 0 20px rgba(255,51,102,0.5);
+      transition:transform 0.3s;
+    }
+    .hero-btn:hover { transform:scale(1.05); }
+
+    /* Category Quick Links */
+    .category-links {
+      display:flex; flex-wrap:wrap; gap:1rem;
+      justify-content:center; padding:1.5rem 0;
+      background:#111; margin:1rem 0;
+    }
+    .cat-btn {
+      padding:0.8rem 1.5rem;
+      background:#222; color:#ff6699; border:none; border-radius:50px;
+      cursor:pointer; transition:all 0.3s;
+    }
+    .cat-btn:hover { background:#ff3366; color:white; }
+
+    /* Stats Bar */
+    .stats-bar {
+      display:flex; flex-wrap:wrap; justify-content:center; gap:2rem;
+      padding:1.5rem 0; background:#0f0f0f; margin:1rem 0;
+      text-align:center;
+    }
+    .stat-item { font-size:1.1rem; }
+    .stat-number { font-size:2rem; color:#ff3366; font-weight:bold; }
+
+    /* Featured Carousel */
+    .featured-carousel {
+      overflow:hidden; padding:2rem 0;
+      background:#000;
+    }
+    .carousel-track {
+      display:flex; transition:transform 0.5s ease;
+    }
+    .carousel-card {
+      flex:0 0 300px; margin:0 1rem;
+      background:#111; border-radius:12px; overflow:hidden;
+    }
+
+    /* Search */
+    .search-bar { max-width:1000px; margin:2.5rem auto; padding:0 1rem; }
+    #videoSearch {
+      width:100%; padding:1.2rem; font-size:1.2rem;
+      background:#111; border:3px solid #ff3366; color:white;
+      border-radius:50px; outline:none;
+    }
+
+    /* Video Grid */
+    .video-gallery {
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(340px,1fr));
+      gap:clamp(1.2rem,4vw,2.5rem);
+      padding:2rem 1rem;
+    }
+
+    .video-card {
+      background:#0f0f0f;
+      border-radius:14px; overflow:hidden;
+      transition:all 0.4s ease;
+      cursor:pointer;
+    }
+    .video-card:hover {
+      transform:translateY(-14px);
+      box-shadow:0 25px 50px rgba(255,51,102,0.35);
+    }
+
+    .thumbnail { position:relative; padding-top:56.25%; background:#000; }
+    .thumbnail img {
+      position:absolute; inset:0; width:100%; height:100%;
+      object-fit:cover; transition:transform 0.5s;
+    }
+    .video-card:hover .thumbnail img { transform:scale(1.12); }
+
+    .play-icon {
+      position:absolute; inset:0; margin:auto;
+      font-size:clamp(4rem,14vw,6rem); color:rgba(255,255,255,0.8);
+      opacity:0; transition:opacity 0.4s;
+    }
+    .video-card:hover .play-icon { opacity:1; }
+
+    .duration {
+      position:absolute; bottom:10px; right:10px;
+      background:rgba(0,0,0,0.75); padding:5px 10px;
+      border-radius:8px; font-size:0.9rem; color:#fff;
+    }
+
+    .video-card h3 {
+      padding:1rem; margin:0;
+      background:linear-gradient(90deg,#ff3366,#cc0033);
+      font-size:1.3rem; text-align:center;
+    }
+    .categories-tags {
+      text-align:center; padding:0.6rem;
+      background:#1a1a1a; color:#ff6699; font-size:0.85rem;
+    }
+
+    /* Modal */
+    .modal {
+      display:none; position:fixed; inset:0; z-index:1000;
+      background:rgba(0,0,0,0.96); align-items:center; justify-content:center;
+      padding:1rem;
+    }
+    .modal-content {
+      background:#000; width:100%; max-width:1280px;
+      border-radius:16px; overflow:hidden; position:relative;
+      border:2px solid #ff3366; max-height:95vh;
+    }
+    .close {
+      position:absolute; top:12px; right:18px;
+      font-size:3.5rem; color:#ff3366; cursor:pointer; z-index:10;
+    }
+    #modalTitle {
+      padding:1.5rem; margin:0;
+      background:linear-gradient(90deg,#ff3366,#cc0033);
+      text-align:center; font-size:2.2rem;
+    }
+    .modal-video { position:relative; padding-bottom:56.25%; height:0; }
+    #modalPlayer { position:absolute; inset:0; width:100%; height:100%; border:none; }
+
+    /* Monetization placeholders */
+    .monetize-box {
+      background:#111; margin:2rem auto; padding:1.5rem;
+      max-width:900px; border-radius:12px; text-align:center;
+    }
+    .monetize-box a { color:#ff6699; font-weight:bold; text-decoration:none; }
+
+    @media (max-width:768px) {
+      .video-gallery { grid-template-columns:1fr; }
+      .hero { padding:10rem 1rem; }
+      .hero-buttons { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Age Gate -->
+<div class="age-gate" id="ageGate">
+  <h1>18+ ONLY</h1>
+  <p>This site contains explicit adult material.<br>You must be 18 or older to enter.</p>
+  <button onclick="document.getElementById('ageGate').style.display='none'">I am 18+ — Enter</button>
+</div>
+
+<header class="container">
+  <h1>CumVault</h1>
+  <nav>
+    <a href="#">Home</a> |
+    <select id="categoryFilter">
+      <option value="">All Categories</option>
+      <option value="Hentai">Hentai</option>
+      <option value="MILF">MILF</option>
+      <option value="Lesbian">Lesbian</option>
+      <option value="Anal">Anal</option>
+      <option value="BBC">BBC</option>
+      <option value="Creampie">Creampie</option>
+      <option value="Trans">Trans</option>
+    </select> |
+    Favorites: <span id="favTotal" class="fav-count">0</span>
+  </nav>
+</header>
+
+<!-- Upgraded Hero with Buttons -->
+<section class="hero container">
+  <h1>Free Hardcore Porn Tube 2025</h1>
+  <p>Unlimited Pornhub embeds — no signup, no limits, pure filth</p>
+  <div class="hero-buttons">
+    <button class="hero-btn" onclick="scrollToRandom()">Start Watching</button>
+    <button class="hero-btn" onclick="document.getElementById('videoSearch').focus()">Search Now</button>
+    <button class="hero-btn" onclick="alert('Favorites coming soon!')">My Favorites</button>
+  </div>
+</section>
+
+<!-- Category Quick Links -->
+<div class="category-links container">
+  <button class="cat-btn" onclick="document.getElementById('categoryFilter').value='Lesbian'; applyFilters()">Lesbian</button>
+  <button class="cat-btn" onclick="document.getElementById('categoryFilter').value='Hentai'; applyFilters()">Hentai</button>
+  <button class="cat-btn" onclick="document.getElementById('categoryFilter').value='MILF'; applyFilters()">MILF</button>
+  <button class="cat-btn" onclick="document.getElementById('categoryFilter').value='Trans'; applyFilters()">Trans</button>
+  <button class="cat-btn" onclick="document.getElementById('categoryFilter').value='Anal'; applyFilters()">Anal</button>
+  <button class="cat-btn" onclick="document.getElementById('categoryFilter').value='BBC'; applyFilters()">BBC</button>
+</div>
+
+<!-- Stats Bar -->
+<div class="stats-bar container">
+  <div class="stat-item">
+    <div class="stat-number">13</div>
+    <div>Videos</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">500K+</div>
+    <div>Daily Views</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-number">100%</div>
+    <div>Free</div>
+  </div>
+</div>
+
+<!-- Featured Video Carousel -->
+<section class="featured-carousel container" id="featuredCarousel">
+  <div class="carousel-track" id="carouselTrack"></div>
+</section>
+
+<div class="search-bar container">
+  <input type="text" id="videoSearch" placeholder="Search videos (lesbian squirt, hentai tentacles, MILF creampie...)"/>
+</div>
+
+<div class="monetize-box">
+  <p><strong>TrafficJunky / ExoClick Banner</strong> — Replace with real code from your affiliate dashboard</p>
+</div>
+
+<section class="video-gallery container" id="videoGallery">
+  <!-- Your 13 video cards (original 3 + 10 added) -->
+  <div class="video-card" data-title="Lesbian Scissoring Squirt Fest" data-category="Lesbian" data-embed="https://www.pornhub.com/embed/ph5f8b2c3d4e5f6">
+    <div class="thumbnail">
+      <img src="https://source.unsplash.com/random/600x400/?lesbian,scissoring" alt="">
+      <div class="play-icon">▶</div>
+      <span class="duration">22:45</span>
+    </div>
+    <h3>Lesbian Scissoring Squirt Fest</h3>
+    <div class="categories-tags">Lesbian</div>
+    <p>Wet pussies grinding until explosive mutual squirting.</p>
+  </div>
+
+  <!-- ... (your other 12 cards here - paste them in if needed) ... -->
+</section>
+
+<div class="monetize-box">
+  <p><strong>JuicyAds / Clickadu In-Content Ad</strong> — Replace with your zone code</p>
+</div>
+
+<div class="monetize-box cam-promo">
+  <strong>Live Cam Action</strong><br>
+  <a href="https://chaturbate.com/in/?tour=yourref&campaign=yourcampaign" target="_blank" rel="nofollow">→ Chaturbate Live Girls</a><br>
+  <a href="https://stripchat.com/?ref=yourref" target="_blank" rel="nofollow">→ Stripchat Private Shows</a>
+</div>
+
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <h2 id="modalTitle"></h2>
+    <div class="modal-video">
+      <iframe id="modalPlayer" src="" allowfullscreen allow="autoplay"></iframe>
+    </div>
+    <button id="favBtn">❤️ Add to Favorites</button>
+  </div>
+</div>
+
+<footer>
+  © 2025 CumVault • 18+ only • All models 18+ • <a href="#" style="color:#ff6699">Terms</a> • <a href="#" style="color:#ff6699">Privacy</a>
+</footer>
+
+<script>
+let favorites = JSON.parse(localStorage.getItem('cumFavs2025') || '[]');
+const favTotalEl = document.getElementById('favTotal');
+
+function updateFavUI() {
+  favTotalEl.textContent = favorites.length;
+  localStorage.setItem('cumFavs2025', JSON.stringify(favorites));
+}
+updateFavUI();
+
+function openModal(title, embedSrc) {
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalPlayer').src = embedSrc;
+  document.getElementById('videoModal').style.display = 'flex';
+
+  const btn = document.getElementById('favBtn');
+  const isFav = favorites.includes(title);
+  btn.textContent = isFav ? '❤️ Favorited' : '❤️ Add to Favorites';
+  btn.onclick = () => {
+    if (isFav) {
+      favorites = favorites.filter(t => t !== title);
+    } else {
+      favorites.push(title);
+    }
+    btn.textContent = favorites.includes(title) ? '❤️ Favorited' : '❤️ Add to Favorites';
+    updateFavUI();
+  };
+}
+
+function closeModal() {
+  document.getElementById('videoModal').style.display = 'none';
+  document.getElementById('modalPlayer').src = '';
+}
+
+document.getElementById('videoModal').onclick = e => {
+  if (e.target === document.getElementById('videoModal')) closeModal();
+};
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+document.querySelectorAll('.video-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const title = card.dataset.title;
+    const src = card.dataset.embed;
+    if (title && src) openModal(title, src);
+  });
+});
+
+let filterTimeout;
+function applyFilters() {
+  clearTimeout(filterTimeout);
+  filterTimeout = setTimeout(() => {
+    const term = document.getElementById('videoSearch').value.toLowerCase().trim();
+    const cat = document.getElementById('categoryFilter').value;
+
+    document.querySelectorAll('.video-card').forEach(card => {
+      const text = card.textContent.toLowerCase();
+      const category = card.dataset.category || '';
+      const matchText = text.includes(term);
+      const matchCat = !cat || category === cat;
+      card.style.display = matchText && matchCat ? '' : 'none';
+    });
+  }, 280);
+}
+
+document.getElementById('videoSearch').addEventListener('input', applyFilters);
+document.getElementById('categoryFilter').addEventListener('change', applyFilters);
+
+function scrollToRandom() {
+  const visible = [...document.querySelectorAll('.video-card')].filter(c => c.style.display !== 'none');
+  if (visible.length === 0) return;
+  const random = visible[Math.floor(Math.random() * visible.length)];
+  random.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+// New: Featured Carousel (clones first 6 cards)
+const carouselTrack = document.getElementById('carouselTrack');
+if (carouselTrack) {
+  const cards = document.querySelectorAll('.video-card');
+  for (let i = 0; i < Math.min(6, cards.length); i++) {
+    const clone = cards[i].cloneNode(true);
+    clone.classList.add('carousel-card');
+    carouselTrack.appendChild(clone);
+  }
+}
+</script>
+</body>
+</html>
