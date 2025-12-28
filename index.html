@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CumVault • Free Hardcore Tube 2025</title>
+  <meta name="description" content="Unlimited free adult videos — no signup, no limits"/>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:#000; color:#e0e0e0; font-family:'Poppins',sans-serif; }
+    h1,h2,h3 { font-family:'Orbitron',sans-serif; }
+    .container { max-width:1800px; margin:0 auto; padding:0 1rem; }
+
+    /* Age Gate */
+    .age-gate {
+      position:fixed; inset:0; z-index:9999;
+      background:rgba(0,0,0,.98);
+      display:flex; flex-direction:column; justify-content:center; align-items:center;
+      text-align:center;
+    }
+    .age-gate h1 { color:#ff3366; font-size:3rem; }
+    .age-gate button {
+      margin-top:2rem; padding:1rem 3rem;
+      font-size:1.2rem; border:none; border-radius:40px;
+      background:#ff3366; color:white; cursor:pointer;
+    }
+
+    header {
+      position:sticky; top:0; z-index:100;
+      background:#050505; border-bottom:2px solid #ff3366;
+      padding:1rem; text-align:center;
+    }
+    header h1 { color:#ff3366; }
+
+    nav { margin-top:.5rem; }
+    nav select { background:#111; color:white; border:1px solid #ff3366; padding:.5rem; }
+
+    .hero {
+      padding:8rem 1rem; text-align:center;
+      background:linear-gradient(rgba(0,0,0,.9),rgba(0,0,0,.9));
+    }
+    .hero h1 { color:#ff3366; font-size:3rem; }
+    .hero button {
+      margin-top:1.5rem; padding:1rem 3rem;
+      background:#ff3366; border:none; color:white;
+      border-radius:40px; font-size:1.2rem;
+    }
+
+    .search-bar { max-width:800px; margin:2rem auto; }
+    #videoSearch {
+      width:100%; padding:1rem;
+      border-radius:40px; border:2px solid #ff3366;
+      background:#111; color:white;
+    }
+
+    .video-gallery {
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+      gap:1.5rem; padding:2rem 1rem;
+    }
+
+    .video-card {
+      background:#0f0f0f; border-radius:14px;
+      overflow:hidden; cursor:pointer;
+      transition:.3s;
+    }
+    .video-card:hover { transform:translateY(-8px); }
+
+    .thumbnail { position:relative; padding-top:56.25%; }
+    .thumbnail img {
+      position:absolute; inset:0;
+      width:100%; height:100%; object-fit:cover;
+    }
+    .play-icon {
+      position:absolute; inset:0;
+      display:flex; align-items:center; justify-content:center;
+      font-size:4rem; color:white; opacity:.8;
+    }
+    .duration {
+      position:absolute; bottom:8px; right:8px;
+      background:rgba(0,0,0,.7); padding:.3rem .6rem;
+      border-radius:6px;
+    }
+
+    .video-card h3 {
+      padding:1rem; background:#ff3366;
+      font-size:1.1rem; text-align:center;
+    }
+    .categories-tags {
+      text-align:center; padding:.5rem;
+      background:#1a1a1a; color:#ff6699;
+    }
+
+    /* Modal */
+    .modal {
+      position:fixed; inset:0; display:none;
+      background:rgba(0,0,0,.95);
+      align-items:center; justify-content:center;
+      z-index:1000;
+    }
+    .modal-content {
+      width:100%; max-width:1100px;
+      background:#000; border:2px solid #ff3366;
+      border-radius:14px; overflow:hidden;
+    }
+    .close {
+      position:absolute; right:16px; top:8px;
+      font-size:3rem; cursor:pointer; color:#ff3366;
+    }
+    .modal-video { position:relative; padding-bottom:56.25%; }
+    iframe { position:absolute; inset:0; width:100%; height:100%; border:none; }
+
+    footer {
+      text-align:center; padding:2rem; color:#777;
+      border-top:1px solid #222;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="age-gate" id="ageGate">
+  <h1>18+ ONLY</h1>
+  <p>You must be 18 or older to enter.</p>
+  <button onclick="ageGate.style.display='none'">Enter</button>
+</div>
+
+<header class="container">
+  <h1>CumVault</h1>
+  <nav>
+    <select id="categoryFilter">
+      <option value="">All Categories</option>
+      <option>Lesbian</option>
+      <option>MILF</option>
+      <option>Anal</option>
+      <option>BBC</option>
+      <option>Trans</option>
+      <option>Hentai</option>
+      <option>Creampie</option>
+    </select>
+  </nav>
+</header>
+
+<section class="hero container">
+  <h1>Free Hardcore Tube</h1>
+  <button onclick="scrollToRandom()">Start Watching</button>
+</section>
+
+<div class="search-bar container">
+  <input id="videoSearch" placeholder="Search..." />
+</div>
+
+<section class="video-gallery container" id="videoGallery">
+
+  <!-- VIDEO CARDS -->
+  <div class="video-card" data-title="Lesbian Scissoring Squirt Fest" data-category="Lesbian" data-embed="https://www.pornhub.com/embed/ph5f8b2c3d4e5f6">
+    <div class="thumbnail">
+      <img src="https://source.unsplash.com/random/600x400/?neon,dark" />
+      <div class="play-icon">▶</div>
+      <span class="duration">22:45</span>
+    </div>
+    <h3>Lesbian Scissoring Squirt Fest</h3>
+    <div class="categories-tags">Lesbian</div>
+  </div>
+
+  <!-- You can duplicate safely below -->
+  
+</section>
+
+<div id="videoModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">×</span>
+    <div class="modal-video">
+      <iframe id="modalPlayer" sandbox="allow-scripts allow-same-origin allow-presentation" allowfullscreen></iframe>
+    </div>
+  </div>
+</div>
+
+<footer>
+  © 2025 CumVault • 18+ Only
+</footer>
+
+<script>
+const modal = document.getElementById('videoModal');
+const player = document.getElementById('modalPlayer');
+
+document.querySelectorAll('.video-card').forEach(card=>{
+  card.onclick=()=>{
+    player.src = card.dataset.embed;
+    modal.style.display='flex';
+  }
+});
+
+function closeModal(){
+  modal.style.display='none';
+  player.src='';
+}
+
+modal.onclick=e=>{ if(e.target===modal) closeModal(); }
+
+function scrollToRandom(){
+  const cards=[...document.querySelectorAll('.video-card')];
+  cards[Math.floor(Math.random()*cards.length)]
+    .scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+document.getElementById('videoSearch').oninput=e=>{
+  const t=e.target.value.toLowerCase();
+  document.querySelectorAll('.video-card').forEach(c=>{
+    c.style.display = c.textContent.toLowerCase().includes(t) ? '' : 'none';
+  });
+};
+
+document.getElementById('categoryFilter').onchange=e=>{
+  const v=e.target.value;
+  document.querySelectorAll('.video-card').forEach(c=>{
+    c.style.display = !v || c.dataset.category===v ? '' : 'none';
+  });
+};
+</script>
+
+</body>
+</html>
